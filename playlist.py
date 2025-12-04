@@ -38,7 +38,14 @@ def add_song():
 
     songs.append(song)
     print("✔ ĐÃ THÊM BÀI HÁT:", song)
+def view_playlist():
+    if len(songs) == 0:
+        print("Playlist đang trống.")
+        return
 
+    print("\n--- DANH SÁCH PHÁT ---")
+    for i, song in enumerate(songs, start=1):
+        print(f"{i}. {song['title']} - {song['artist']} ({song['duration']}s)")
 def main():
     while True:
         print("\n--- MUSIC PLAYLIST MANAGER ---")
